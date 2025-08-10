@@ -1,0 +1,187 @@
+/* Base variables */
+:root {
+  --primary-dark: #1a1230;
+  --primary-purple: #7a4fff;
+  --accent-pink: #ff4f88;
+  --text-light: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  font-family: "Poppins", sans-serif;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("cover.png") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 18, 48, 0.6);
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4rem); /* Responsive font */
+  color: var(--text-light);
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  animation: glowPulse 1s infinite ease-in-out, glitch 3s infinite linear;
+}
+
+.motto {
+  font-family: "Source Code Pro", monospace;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: var(--text-light);
+  border-right: 2px solid var(--accent-pink);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* MEMBERS SECTION */
+.members {
+  padding: 60px 20px;
+  background-color: var(--primary-dark);
+  text-align: center;
+}
+
+.members h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--primary-purple);
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* MEMBER CARDS */
+.member-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.member-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.member-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.member-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: var(--accent-pink);
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.member-card p {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* FADE-IN ANIMATION */
+.show-card {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 0.6s ease-out;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .member-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    height: 80vh;
+  }
+  .motto {
+    white-space: normal; /* Wrap text on small screens */
+    border: none;
+  }
+  .member-card img {
+    max-height: 150px;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px var(--text-light), 0 0 10px var(--text-light);
+  }
+  50% {
+    text-shadow: 0 0 15px var(--text-light), 0 0 30px var(--text-light);
+  }
+  100% {
+    text-shadow: 0 0 5px var(--text-light), 0 0 10px var(--text-light);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(-2px, -1px);
+  }
+  60% {
+    transform: translate(2px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}

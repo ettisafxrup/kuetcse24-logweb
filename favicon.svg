@@ -1,0 +1,27 @@
+<!-- save this as favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="KUET CSE'24">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#7A4FFF"/>
+      <stop offset="1" stop-color="#FF4F88"/>
+    </linearGradient>
+    <filter id="f" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- rounded square background -->
+  <rect width="64" height="64" rx="12" fill="url(#g)" />
+
+  <!-- KUET -->
+  <text x="50%" y="40%" font-family="Orbitron, Arial, sans-serif"
+        font-weight="700" font-size="14" fill="#FFFFFF"
+        text-anchor="middle" dominant-baseline="middle"
+        filter="url(#f)">KUET</text>
+
+  <!-- CSE'24 -->
+  <text x="50%" y="65%" font-family="Orbitron, Arial, sans-serif"
+        font-weight="700" font-size="12" fill="#FFFFFF"
+        text-anchor="middle" dominant-baseline="middle"
+        filter="url(#f)">CSE'24</text>
+</svg>
