@@ -134,6 +134,7 @@ const members = [
   { name: "ANTU", id: "2407118" },
   { name: "SHAMIUL", id: "2407119" },
   { name: "TALHA", id: "2407120" },
+  { name: "THOWAI", id: "2407121" },
 ]
 
 const memberGrid = document.getElementById("memberGrid")
